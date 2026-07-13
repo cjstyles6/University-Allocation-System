@@ -1,4 +1,4 @@
-// File: C:\Users\Lenovo\Documents\University Allocation System\src\app\register\page.tsx
+// File: C:\Users\USER1\Desktop\projects\collins\University-Allocation-System\src\app\register\page.tsx
 import * as entry from '../../../../../src/app/register/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

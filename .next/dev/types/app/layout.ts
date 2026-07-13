@@ -1,4 +1,4 @@
-// File: C:\Users\Lenovo\Documents\University Allocation System\src\app\layout.tsx
+// File: C:\Users\USER1\Desktop\projects\collins\University-Allocation-System\src\app\layout.tsx
 import * as entry from '../../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
