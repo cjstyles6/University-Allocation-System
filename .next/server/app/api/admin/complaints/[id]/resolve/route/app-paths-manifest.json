@@ -1,0 +1,3 @@
+{
+  "/api/admin/complaints/[id]/resolve/route": "app/api/admin/complaints/[id]/resolve/route.js"
+}

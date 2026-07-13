@@ -1,0 +1,146 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  STUDENT
+  STAFF
+  ADMIN
+}
+
+enum RoomStatus {
+  AVAILABLE
+  OCCUPIED
+  MAINTENANCE
+}
+
+enum RoomType {
+  SINGLE
+  DOUBLE
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  REJECTED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+}
+
+enum ComplaintCategory {
+  MAINTENANCE
+  ELECTRICITY
+  WATER
+  INTERNET
+  CLEANLINESS
+  OTHER
+}
+
+enum ComplaintStatus {
+  PENDING
+  IN_PROGRESS
+  AWAITING_CONFIRMATION
+  RESOLVED
+}
+
+model User {
+  id            String         @id @default(cuid())
+  name          String
+  email         String         @unique
+  password      String?
+  role          Role           @default(STUDENT)
+  image         String?
+  hasPaid       Boolean        @default(false)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  bookings      Booking[]
+  complaints    Complaint[]    @relation("Applicant")
+  assignedTasks Complaint[]    @relation("Assignee")
+  payments      Payment[]
+  notifications Notification[]
+}
+
+model Room {
+  id          String     @id @default(cuid())
+  number      String     @unique
+  hostelName  String     @default("Main Hostel")
+  type        RoomType   @default(SINGLE)
+  status      RoomStatus @default(AVAILABLE)
+  price       Float
+  images      String[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  bookings    Booking[]
+  complaints  Complaint[]
+}
+
+model Booking {
+  id            String        @id @default(cuid())
+  userId        String
+  roomId        String
+  checkIn       DateTime
+  checkOut      DateTime
+  semester      String
+  status        BookingStatus @default(PENDING)
+  paymentStatus PaymentStatus @default(PENDING)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  room          Room          @relation(fields: [roomId], references: [id], onDelete: Restrict)
+}
+
+model Payment {
+  id            String        @id @default(cuid())
+  userId        String
+  amount        Float
+  reference     String        @unique
+  transactionId String?       @unique
+  provider      String        @default("flutterwave")
+  status        PaymentStatus @default(PENDING)
+  createdAt     DateTime      @default(now())
+
+  user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  body      String
+  link      String?
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Complaint {
+  id            String            @id @default(cuid())
+  title         String
+  description   String
+  category      ComplaintCategory
+  status        ComplaintStatus   @default(PENDING)
+  image         String?
+  userId        String
+  roomId        String?
+  assignedToId  String?
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+
+  user          User              @relation("Applicant", fields: [userId], references: [id], onDelete: Cascade)
+  assignedTo    User?             @relation("Assignee", fields: [assignedToId], references: [id], onDelete: SetNull)
+  room          Room?             @relation(fields: [roomId], references: [id], onDelete: SetNull)
+}

@@ -1,0 +1,13 @@
+{"timestamp":"00:00:11.217","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:14.467","source":"Server","level":"LOG","message":"○ Compiling /register ..."}
+{"timestamp":"00:00:34.550","source":"Server","level":"WARN","message":"[next-auth][warn][NEXTAUTH_URL] \"\\nhttps://next-auth.js.org/warnings#nextauth_url\""}
+{"timestamp":"00:00:41.464","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:42.581","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:47.936","source":"Server","level":"WARN","message":"[next-auth][warn][NEXTAUTH_URL] \"\\nhttps://next-auth.js.org/warnings#nextauth_url\""}
+{"timestamp":"00:01:10.153","source":"Server","level":"ERROR","message":"Registration Error: PrismaClientKnownRequestError: \nInvalid `prisma.user.findUnique()` invocation:\n\n\n"}
+{"timestamp":"00:02:51.881","source":"Server","level":"LOG","message":"  Reload env: .env"}
+{"timestamp":"00:02:59.383","source":"Server","level":"LOG","message":"  Reload env: .env"}
+{"timestamp":"00:03:11.735","source":"Server","level":"ERROR","message":"Registration Error: PrismaClientKnownRequestError: \nInvalid `prisma.user.findUnique()` invocation:\n\n\n"}
+{"timestamp":"00:03:14.623","source":"Server","level":"ERROR","message":"Registration Error: PrismaClientKnownRequestError: \nInvalid `prisma.user.findUnique()` invocation:\n\n\n"}
+{"timestamp":"00:21:01.270","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:21:11.177","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
