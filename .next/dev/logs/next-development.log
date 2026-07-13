@@ -83,3 +83,6 @@
 {"timestamp":"00:42:15.708","source":"Server","level":"WARN","message":"[next-auth][warn][NEXTAUTH_URL] \"\\nhttps://next-auth.js.org/warnings#nextauth_url\""}
 {"timestamp":"00:42:18.275","source":"Server","level":"LOG","message":"  Reload env: .env"}
 {"timestamp":"00:42:21.492","source":"Server","level":"WARN","message":"[next-auth][warn][NEXTAUTH_URL] \"\\nhttps://next-auth.js.org/warnings#nextauth_url\""}
+{"timestamp":"00:50:08.185","source":"Server","level":"WARN","message":"[next-auth][warn][NEXTAUTH_URL] \"\\nhttps://next-auth.js.org/warnings#nextauth_url\""}
+{"timestamp":"00:52:28.642","source":"Server","level":"LOG","message":"  Reload env: .env"}
+{"timestamp":"00:52:31.959","source":"Server","level":"WARN","message":"[next-auth][warn][NEXTAUTH_URL] \"\\nhttps://next-auth.js.org/warnings#nextauth_url\""}
